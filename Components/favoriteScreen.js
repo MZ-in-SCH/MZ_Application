@@ -12,8 +12,6 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
-  Alert,
-  Image,
 } from 'react-native';
 
 const App = () => {
@@ -26,9 +24,7 @@ const App = () => {
         <View style={styles.middleArea}>
           <ScrollView>
             <View style={styles.selectArea}>
-              <TouchableOpacity style={styles.favoritBtn}>
-                <Text style={styles.favoritText}>Text</Text>
-              </TouchableOpacity>
+              <TouchableOpacity style={styles.favoritBtn}></TouchableOpacity>
               <TouchableOpacity style={styles.favoritBtn}></TouchableOpacity>
             </View>
             <View style={styles.selectArea}>
@@ -102,9 +98,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#0D47A1',
   },
   favoritBtn: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
     width: 170,
     height: 170,
     borderWidth: 2,
@@ -117,11 +110,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     marginRight: 10,
-  },
-  favoritText: {
-    fontSize: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   btnArea2: {
     flex: 1,
