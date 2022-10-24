@@ -275,6 +275,7 @@ module.exports = {
 
       세종: '003002017',
       세종: '003002017001',
+      //세종시?
     };
     return {stateCode: reginCode[state], cityCode: reginCode[city] || null};
   },
