@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import MainScreen from '../Main/MainScreen'
+import NewsDetailScreen from '../Main/NewsDetail'
 
 import PolicyListScreen from '../PolicyList/PolicyListScreen'
 import PolicyDetailScreen from '../PolicyList/PolicyDetailScreen'
@@ -19,6 +20,15 @@ import MyPageScreen from '../MyPage/MyPageScreen'
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+const MainStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Main" component={MainScreen} />
+      <Stack.Screen name="NewsDetail"  component={NewsDetailScreen} />
+    </Stack.Navigator>
+  );
+};
+
 const PolicyListStack = () => {
   return (
     <Stack.Navigator>
@@ -30,9 +40,9 @@ const PolicyListStack = () => {
 
 const ScrapStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="ScrapList" component={MyPageScrb} />
-      <Stack.Screen name="ScrapDetail"  component={MyPageScrbDetail} />
+    <Stack.Navigator initialRouteName="MyScrapList">
+      <Stack.Screen name="MyScrapList" component={MyPageScrb} />
+      <Stack.Screen name="MyScrapDetail"  component={MyPageScrbDetail} />
     </Stack.Navigator>
   ); //여기 리스트는 스크랩 해놓은거만
 };
@@ -55,8 +65,8 @@ const ChangeUserInfoStack = () => {
 const MyPageStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Myinfo" options={{ headerShown: false }} component={MyPageScreen} />
-      <Stack.Screen name="Scrap" options={{ headerShown: false }} component={ScrapStack} />
+      <Stack.Screen name="Myinfo" component={MyPageScreen} />
+      <Stack.Screen name="Scrab" options={{ headerShown: false }} component={ScrapStack} />
       <Stack.Screen
         name="ChangeUserInfo"
         options={{ headerShown: false }}
@@ -77,7 +87,7 @@ export default function  TitleStack ()  {
       }}>
       <Tab.Screen
         name="Main"
-        component={MainScreen}
+        component={MainStack}
         options={{ headerShown: false }}
       />
       <Tab.Screen
